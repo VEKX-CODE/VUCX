@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  border-radius: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; /* полное отключение выделения текста */
+  -webkit-touch-callout: none; /* отключает контекстное меню при долгом тапе */
+  -webkit-tap-highlight-color: transparent; /* убирает синюю вспышку при тапе */
+}
+
+input {
+  -webkit-user-select: auto;
+  user-select: auto; /* поле ввода цифр остаётся доступным */
+}
+
+body {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh; /* точная высота на мобилках с учетом шторки браузера */
+  margin: 0;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.calculator {
+  background: #0d0d0d;
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  width: 360px;
+  max-width: 92vw;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+select, input, button {
+  background: #000000;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 12px;
+  font-size: 11px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* скрывает стандартные стрелки браузера */
+}
+
+/* Скрываем стрелочки у числового инпута (спиннеры вверх/вниз) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+select option {
+  background: #000000;
+  color: #ff0000;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover, button:active {
+  background: #ff0000;
+  color: #000000;
+}
+
+#directionLabel {
+  color: #ff0000;
+  font-size: 10px;
+  text-align: center;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+#result {
+  color: #ff0000;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 0;
+  text-shadow: 0 0 8px #ff0000;
+}
+
+#bg-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Мобильная адаптация под любые телефоны */
+@media (max-width: 480px) {
+  .calculator {
+    width: 90vw;
+    padding: 18px 14px;
+    gap: 12px;
+  }
+
+  select, input, button {
+    padding: 15px 10px;
+    font-size: 10px;
+  }
+
+  #directionLabel {
+    font-size: 9px;
+  }
+
+  #result {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unit Converter</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+         <div class="calculator">
+            <button onclick="convert()">Посчитать</button>
+            <select id="Unit" onchange="updateLabel()">
+            <option value="Miles">Мили</option>
+            <option value="m">Метры</option>
+            <option value="sm">Сантиметры</optionа
+            <option value="Bite">Байты</option>
+            <option value="Mbyte">МегаБайты</option>
+            <option value="KByte">КилоБайты</option>
+            </select>
+            <input type="number" id="value">
+            <p id="directionLabel">Мили ➔ Километры</p>
+            <p id="result">result</p>
+            <button onclick="toggleMode()">Сменить направление</button>
+         </div>
+    <canvas id="bg-3d"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="bg-3d.js"></script>
+    <script src="script.js"></script>
+    </body>
+</html>
